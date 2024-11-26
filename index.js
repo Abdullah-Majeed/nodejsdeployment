@@ -11,7 +11,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     res.send('Backend service running');
 })
-mongoose.connect(process.env.MONGO_URI).then(() => {
+mongoose.connect(process.env.DATABASE_URL).then(() => {
     app.listen(PORT, () => {
         console.log(`Backend service listening on ${PORT}`);
         app.get('/check', (req, res) => {
